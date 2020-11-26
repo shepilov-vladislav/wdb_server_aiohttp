@@ -1,0 +1,155 @@
+@import "prompt";
+@import "watchers";
+
+.interpreter {
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+
+    .terminal {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .scrollback {
+            .scroll-line {
+                padding: 4px;
+            }
+
+            .duration {
+                float: right;
+            }
+        }
+    }
+
+    &.full-height {
+        height: calc(100vh - 40px - 64px);
+    }
+
+    .long {
+        display: none;
+    }
+
+    .short.close:after {
+        content: '…"';
+    }
+
+    table {
+        margin: 0 auto;
+        width: 90%;
+
+        table {
+            width: 100%;
+        }
+
+        &.object {
+            margin: 2em auto;
+
+            thead tr th {
+                text-align: center;
+            }
+
+            tbody tr:not(:hover) {
+                background: rgba(0, 0, 0, 0.025);
+            }
+        }
+
+        tbody {
+            &.closed {
+                display: none;
+            }
+
+            td {
+                &.key {
+                    code {
+                        white-space: nowrap;
+                    }
+                }
+
+                &.ellipse {
+                    text-align: center;
+                }
+            }
+
+            td.val {
+                code {
+                    word-break: break-all;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+
+    a.inspect {
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        max-width: 100%;
+    }
+
+    .prompt,
+    .for {
+        &::before {
+            content: ">>>";
+        }
+    }
+
+    .for::before {
+        margin-right: 8px;
+    }
+
+    .prompt::before {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .diff {
+        td {
+            width: 49%;
+            border-top: none;
+            border-bottom: none;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .diff_lno {
+            min-width: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 1%;
+        }
+
+        .diff_line {
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .diff_sub {
+            background-color: #f8cbcb;
+        }
+
+        .diff_line_sub {
+            background-color: #ffecec;
+        }
+
+        .diff_add {
+            background-color: #a6f3a6;
+        }
+
+        .diff_line_add {
+            background-color: #eaffea;
+        }
+
+        .diff_chg {
+            background-color: #f2f1a1;
+        }
+
+        .diff_line_chg {
+            background-color: #fffeeb;
+        }
+    }
+}

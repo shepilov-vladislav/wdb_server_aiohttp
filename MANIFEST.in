@@ -1,0 +1,4 @@
+include *.py
+recursive-include wdb_server/templates *.html
+recursive-include wdb_server/static *
+recursive-include requirements *

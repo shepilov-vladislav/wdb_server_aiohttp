@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wdb server web interface</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url('static', filename='images/favicon.ico') }}">
+    {% block css %}
+    {% endblock %}
+  </head>
+  <body {% if app['settings'].debug %}data-debug="true"{% endif %} data-type="{{ type_ }}">
+    <section class="wdb" data-page="{{ handler.__name__}}">
+      {% block main %}
+      {% endblock %}
+    </section>
+    {% block script %}{% endblock %}
+  </body>
+</html>

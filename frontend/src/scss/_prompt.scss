@@ -1,0 +1,67 @@
+.interpreter .prompt {
+    display: flex;
+
+    &:before {
+        margin-top: 4px;
+        font-family: "Roboto Mono";
+    }
+
+    .CodeMirror {
+        flex: 1;
+        height: auto;
+        min-height: min-content;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        &.extra-dialog {
+            padding-bottom: 2em;
+        }
+
+        .CodeMirror-cursor {
+            visibility: visible !important;
+            width: auto;
+            border: none;
+            outline: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        &.CodeMirror-focused .CodeMirror-cursor {
+            background: rgba(0, 0, 0, 0.75);
+            animation: blink 1s ease-in-out infinite;
+            outline: 0;
+        }
+    }
+
+    .CodeMirror-dialog {
+        .not-found {
+            color: orangered;
+        }
+    }
+
+    .patience {
+        padding: 4px;
+    }
+}
+
+.CodeMirror-hints {
+    .CodeMirror-hint {
+        max-width: 75vmin;
+    }
+
+    &.auto {
+        opacity: 0.9;
+        box-shadow: (-2px) -3px 5px rgba(0, 0, 0, 0.2) inset;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

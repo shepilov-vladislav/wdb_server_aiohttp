@@ -1,0 +1,25 @@
+# Config file .coveragerc
+
+[report]
+omit =
+    */scenario/*
+    */scenarios/*
+    */test/*
+    */tests/*
+    *_example/*
+    *__init__.py
+    */.venv/*
+    */site-packages/*
+    conftest.py
+
+
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+    # Don't complain about null context checking
+    if context is None:
+    # Don't check obviously not implemented
+    raise NotImplementedError
+    # We don't really care what happens if fail
+    except ImportError:

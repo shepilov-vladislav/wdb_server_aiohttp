@@ -1,0 +1,20 @@
+.interpreter .watchers {
+    .watching,
+    a.inspect,
+    code,
+    div.value {
+        display: inline-block;
+    }
+
+    .watching {
+        margin-right: 1em;
+
+        &:not(:last-child)::after {
+            content: ", ";
+        }
+
+        .name {
+            cursor: not-allowed;
+        }
+    }
+}

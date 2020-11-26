@@ -1,0 +1,167 @@
+{% extends "_layout.html" %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url('static', filename='libs/material-design-lite/material.%s.min.css' % app['theme']['home']) }}">
+{% endblock %}
+
+{% block script %}
+  <script src="{{ static('/javascripts/dist/home.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<!-- Simple header with scrollable tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header cover">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">wdb</span>
+    </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#sessions" class="mdl-layout__tab is-active">Active sessions</a>
+      <a href="#breaks" class="mdl-layout__tab">Breakpoints</a>
+      <a href="#processes" class="mdl-layout__tab">Processes</a>
+      <a href="#trace" class="mdl-layout__tab">Trace file</a>
+      {% if themes %}
+      <a href="#themes" class="mdl-layout__tab">Themes</a>
+      {% endif %}
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <section class="mdl-layout__tab-panel is-active" id="sessions">
+      <div class="page-content">
+        <table class="sessions mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              {% if app["settings"].show_filename %}
+              <th class="mdl-data-table__cell--non-numeric filename-head">File</th>
+              {% endif %}
+              <th class="mdl-data-table__cell--non-numeric">Session id</th>
+              <th class="mdl-data-table__cell--non-numeric">Socket open</th>
+              <th class="mdl-data-table__cell--non-numeric">Websocket open</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="breaks">
+      <div class="page-content">
+        <table class="breakpoints mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Line number</th>
+              <th>Condition</th>
+              <th>Function</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="processes">
+      <div class="page-content table-responsive">
+        <table class="processes mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th>Pid</th>
+              <th>User</th>
+              <th>Command Line</th>
+              <th>Time</th>
+              <th>Memory</th>
+              <th>Cpu</th>
+              <th>Thread ID</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <aside class="note">
+          Pausing a running process requires gdb and a ptrace enabled kernel.
+          <br>
+          You can enable it with:
+          <code>
+            $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+          </code>
+          <br>
+          (This is a potential security breach, please remember to disable it after.)
+        </aside>
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="trace">
+      <div class="page-content">
+        <form class="runfile">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="debug_file" id="debug_file"/>
+            <label class="mdl-textfield__label" for="debug_file">File to run</label>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit">
+            Debug
+          </button>
+        </form>
+      </div>
+    </section>
+    {% if themes %}
+    <section class="mdl-layout__tab-panel" id="themes">
+      <div class="page-content">
+        <form method="post">
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" name="theme_home">
+              {% for theme in themes %}
+                <option value="{{ theme }}"{{ ' selected' if theme == app['theme']['home'] else '' }}>{{ theme }}</option>
+              {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="octane">Home</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" name="theme_pm">
+              {% for theme in themes %}
+                <option value="{{ theme }}"{{ ' selected' if theme == app['theme']['pm'] else '' }}>{{ theme }}</option>
+              {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="octane">PM</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" name="theme_shell">
+              {% for theme in themes %}
+                <option value="{{ theme }}"{{ ' selected' if theme == app['theme']['shell'] else '' }}>{{ theme }}</option>
+              {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="octane">Shell</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" name="theme_debug">
+              {% for theme in themes %}
+                <option value="{{ theme }}"{{ ' selected' if theme == app['theme']['debug'] else '' }}>{{ theme }}</option>
+              {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="octane">Debug</label>
+          </div>
+
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+            <i class="material-icons">save</i>
+          </button>
+
+        </form>
+      </div>
+    </section>
+    {% endif %}
+    <div class="open-shell">
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">computer</i>
+      </button>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

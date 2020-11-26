@@ -1,0 +1,37 @@
+.CodeMirror-linebackground {
+    transition: background-color 1s;
+
+    &.ctx {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-left: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+
+        &.ctx-top {
+            border-top: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        &.ctx-bottom {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &.footstep {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &.breakpoint {
+        background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    &.highlighted {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &.breakpoint.highlighted {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+
+    &.ask-breakpoint {
+        background-color: rgba(255, 0, 0, 0.05);
+    }
+}

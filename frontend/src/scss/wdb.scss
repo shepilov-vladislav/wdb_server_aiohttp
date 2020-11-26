@@ -1,0 +1,125 @@
+@import "interpreter";
+@import "source";
+@import "switch";
+@import "traceback";
+
+body {
+    transition: -webkit-filter 0.25s ease-out, filter 0.25s ease-out;
+
+    &.is-active {
+        transition: -webkit-filter 1.5s ease-in, filter 1.5s ease-in;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    &.is-dead {
+        -webkit-filter: sepia(100%);
+        filter: sepia(100%);
+    }
+}
+
+main {
+    background: white;
+}
+
+.CodeMirror,
+code {
+    font-family: "Roboto Mono";
+}
+
+.split {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 64px - 40px);
+
+    @media screen and (max-width: 1024px) {
+        min-height: calc(100vh - 56px - 40px);
+    }
+
+    .flex {
+        flex: 1 1 calc(50vh - 64px - 40px);
+
+        @media screen and (max-width: 1024px) {
+            flex: 1 1 calc(50vh - 56px - 40px);
+        }
+
+        /* IE */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            height: calc(50vh - 64px - 40px);
+        }
+
+        /* FF scroll */
+        min-height: 0;
+    }
+}
+
+.title {
+    white-space: pre;
+}
+
+footer.mdl-mini-footer {
+    overflow: hidden;
+    height: 32px;
+    padding: 4px 1em;
+
+    .mdl-spinner {
+        margin: 2px 0;
+    }
+}
+
+code {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+}
+
+.modals {
+    .mdl-dialog {
+        width: auto;
+        max-width: 80vw;
+        max-height: 80vh;
+
+        .mdl-dialog__content {
+            overflow: auto;
+
+            table,
+            aside {
+                margin: auto;
+                width: fit-content;
+            }
+
+            table {
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+aside.note {
+    margin-top: 1em;
+    padding: 0.5em;
+    opacity: 0.8;
+}
+
+kbd {
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    color: #333;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 1.4;
+    white-space: nowrap;
+}

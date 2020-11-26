@@ -1,0 +1,131 @@
+{% extends "_layout.html" %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url('static', filename='libs/material-design-lite/material.%s.min.css' % app['theme'][type_]) }}">
+{% endblock %}
+
+{% block script %}
+  <script src="{{ static('/javascripts/dist/wdb.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<div class="trace mdl-layout mdl-js-layout mdl-layout--fixed-header" data-uuid="{{ uuid }}">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title subtitle">
+        Wdb is tracing your code, this may take some time.
+      </span>
+      <div class="mdl-layout-spacer"></div>
+
+      {% if type_ != 'pm' %}
+        <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="s" id="command-s">
+          <i class="material-icons">subdirectory_arrow_right</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="command-s">Step into</div>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="n" id="command-n">
+          <i class="material-icons">redo</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="command-n">Next</div>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="u" id="command-u">
+          <i class="material-icons">keyboard_tab</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="command-u">Until</div>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="r" id="command-r">
+          <i class="material-icons">call_missed_outgoing</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="command-r">Return</div>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="c" id="command-c">
+          <i class="material-icons">play_arrow</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="command-c">Continue</div>
+
+        <div class="separator"></div>
+      {% endif %}
+
+      <a class="mdl-button mdl-js-button mdl-button--icon command" href="/" target="_blank" id="home-link">
+        <i class="material-icons">home</i>
+      </a>
+      <div class="mdl-tooltip mdl-tooltip--large" for="home-link">Open wdb home in a new window</div>
+
+      <button class="mdl-button mdl-js-button mdl-button--icon switch code on" id="switch-code">
+        <i class="material-icons">code</i>
+      </button>
+      <div class="mdl-tooltip mdl-tooltip--large" for="switch-code">Toggle code view</div>
+
+      <button class="mdl-button mdl-js-button mdl-button--icon switch term on" id="switch-term">
+        <i class="material-icons">dvr</i>
+      </button>
+      <div class="mdl-tooltip mdl-tooltip--large" for="switch-term">Toggle prompt view</div>
+
+      <button class="mdl-button mdl-js-button mdl-button--icon command" data-command="h" id="command-h">
+        <i class="material-icons">help</i>
+      </button>
+      <div class="mdl-tooltip mdl-tooltip--large" for="command-h">Help</div>
+
+      {% if type_ == 'pm' %}
+        <button class="mdl-button mdl-js-button mdl-button--icon switch power on" id="switch-power-on">
+          <i class="material-icons">power_settings_new</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="switch-power-on">Refresh request with tracing enabled</div>
+      {% else %}
+        <button class="mdl-button mdl-js-button mdl-button--icon switch power off" id="switch-power-off">
+          <i class="material-icons">close</i>
+        </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="switch-power-off">Stop tracing</div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title title">
+      Tracing
+    </span>
+    <nav class="traceback mdl-navigation">
+    </nav>
+  </div>
+
+  <main class="mdl-layout__content">
+    <div class="page-content split">
+      <div class="source flex hidden">
+      </div>
+
+      <div class="interpreter flex hidden" tabindex="1">
+        <div class="watchers">
+        </div>
+        <div class="terminal">
+          <div class="scrollback">
+          </div>
+          <div class="prompt">
+            <code class="patience"></code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <ul class="mdl-mini-footer__link-list">
+          <li>
+            <a href="/">wdb</a>
+          </li>
+        {% if new_version %}
+          <li>
+            <a href="https://pypi.python.org/pypi/wdb_server" target="blank" title="A new version {{ new_version }} is available.">
+              Version {{ new_version }} is available
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="mdl-mini-footer__right-section">
+      <div class="activity mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+    </footer>
+  </main>
+</div>
+
+<div class="modals"></div>
+{% endblock %}
