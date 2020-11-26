@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional, Union
 import psutil
 
 # Firstparty:
+from wdb_server.constants import UNKNOWN_UUID
 from wdb_server.utils.state import syncwebsockets
 
 log = logging.getLogger("wdb_server")
@@ -24,7 +25,7 @@ except ImportError:
 else:
 
     class LibPythonWatcher:  # type: ignore # pragma: no cover
-        def __init__(self, extra_search_path: str = None) -> None:
+        def __init__(self, extra_search_path: Optional[str] = None) -> None:
             inotify = pyinotify.WatchManager()
             self.files = glob("/usr/lib/libpython*")
             if not self.files:
@@ -59,9 +60,9 @@ else:
             self.notifier.stop()
 
 
-async def refresh_process(uuid: str = "") -> None:
+async def refresh_process(uuid: str = UNKNOWN_UUID) -> None:
 
-    if uuid != "":
+    if uuid != UNKNOWN_UUID:
 
         async def send(
             data: str,

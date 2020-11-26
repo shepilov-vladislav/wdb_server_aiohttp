@@ -41,7 +41,7 @@ But I don't want to study and support the product based on old technologies.
 - Change [CodeMirror](http://codemirror.net/) -> [Monaco](https://microsoft.github.io/monaco-editor)
 - Cover frontend with unit tests
 - Add integration tests frontend <-> backend
-- Add support of multithread/multiprocess/async deebugging
+- Add support of multithread/multiprocess/async debugging
 
 # Description
 
@@ -291,7 +291,7 @@ like this:
 1. Start `wdb.server.py ` running in a container and expose port `1984` to your
    host computer, this will server the debugging web server.
 2. Start debugging in your app container, making sure to set `WDB_SOCKET_SERVER`
-   to the address of the server container, and point it to the expoed port
+   to the address of the server container, and point it to the exposed port
    `19840` on that server.
 3. When a trace is reached, open up `http://<your-docker-hostname>:1984`
 

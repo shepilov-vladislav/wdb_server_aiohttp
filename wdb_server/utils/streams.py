@@ -6,6 +6,7 @@ from asyncio.exceptions import IncompleteReadError
 from struct import unpack
 
 # Firstparty:
+from wdb_server.constants import UNKNOWN_UUID
 from wdb_server.utils.state import breakpoints, sockets, websockets
 
 log = logging.getLogger("wdb_server")
@@ -23,7 +24,7 @@ class IOStream:
     ) -> None:
         self._reader: asyncio.StreamReader = reader
         self._writer: asyncio.StreamWriter = writer
-        self._uuid: str = ""
+        self._uuid: str = UNKNOWN_UUID
 
     @property
     def uuid(self) -> str:
@@ -66,7 +67,10 @@ class IOStream:
         # None if the user closed the window
         log.info("uuid %s closed", self.uuid)
         if websockets.get(self.uuid):
-            await websockets.send(self.uuid, "Die")
+            try:
+                await websockets.send(self.uuid, "Die")
+            except ConnectionResetError:
+                log.warning("Closed stream for %s", self.uuid)
             await websockets.close(self.uuid)
             await websockets.remove(self.uuid)
         await sockets.remove(self.uuid)

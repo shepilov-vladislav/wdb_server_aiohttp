@@ -17,7 +17,7 @@ import aiohttp_jinja2
 from aiomultiprocess import Process
 
 # Firstparty:
-from wdb_server.constants import WDB_TYPES
+from wdb_server.constants import UNKNOWN_UUID, WDB_TYPES
 from wdb_server.utils.state import (
     breakpoints,
     sockets,
@@ -106,7 +106,7 @@ class DebugHandler(web.View):
 
 
 class BaseWebSocketHandler(web.View):
-    uuid: str = ""
+    uuid: str = UNKNOWN_UUID
 
     async def write(self, message: str) -> None:
         raise NotImplementedError
