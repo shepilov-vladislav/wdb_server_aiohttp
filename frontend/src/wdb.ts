@@ -36,7 +36,7 @@ export class Wdb extends Log {
     public __version__: string;
 
     static initClass() {
-        this.prototype.__version__ = "0.0.0-prod0";
+        this.prototype.__version__ = "1.0.0-dev0";
     }
 
     constructor() {

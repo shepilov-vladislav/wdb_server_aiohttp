@@ -1,7 +1,7 @@
 FROM python:3.9-alpine
 
 ARG requirements=requirements/production.txt
-ARG WDB_SERVER_VERSION="0.0.0-prod0"
+ARG WDB_SERVER_VERSION="1.0.0-dev0"
 ARG WDB_VERSION="3.3.0"
 
 RUN \
