@@ -2,6 +2,7 @@
 ![Pylint Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Pylint/badge.svg?branch=master)
 ![Flake8 Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Flake8/badge.svg?branch=master)
 ![Pytest Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Pytest/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp/branch/master/graph/badge.svg)](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp)
 
 # About this project
 This is not original `wdb.server`, original `wdb.server` placed [here](https://github.com/Kozea/wdb/tree/master/server)
@@ -10,6 +11,16 @@ This is not original `wdb.server`, original `wdb.server` placed [here](https://g
 Original project was written more that 6 years ago, with `tornado` on backend and `coffescript/bower/grunt` on frontend.
 These are very old technologies. I wanted to be able to expand functionality and fix bugs.
 But I don't want to study and support the product based on old technologies.
+
+# How I can switch to this version?
+
+## Local installation
+
+`pip uninstall wdb.server && pip install wdb.server.aiohttp`
+
+## Docker installation
+
+`docker run -p 1984:1984 -p 19840:19840 shepilovvladislav/wdb`
 
 # What's difference beetween original wdb.server and this project
 
@@ -323,7 +334,7 @@ web:
     WDB_SOCKET_SERVER: wdb
     WDB_NO_BROWSER_AUTO_OPEN: True
 wdb:
-  image: shepilov-vladislav/wdb
+  image: shepilovvladislav/wdb
   ports:
     - "1984:1984"
 ```
@@ -485,8 +496,8 @@ All contributions are more than welcomed, use the fork luke !
 
 ## Author
 
-[Florian Mounier](http://github.com/paradoxxxzero) @ [Kozea](http://kozea.fr/)
-[Shepilov Vladislav](https://github.com/shepilov-vladislav)
+* [Florian Mounier](http://github.com/paradoxxxzero) @ [Kozea](http://kozea.fr/)
+* [Shepilov Vladislav](https://github.com/shepilov-vladislav)
 
 
 ## Licence
