@@ -7,7 +7,7 @@ from typing import List
 # Thirdparty:
 from setuptools import find_packages, setup
 
-__version__ = "1.0.0-dev0"
+__version__ = "1.0.0"
 PARENT = pathlib.Path(__file__).parent
 
 
