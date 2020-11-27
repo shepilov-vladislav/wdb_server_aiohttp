@@ -2,12 +2,12 @@
 
 ## Statistics
 
-![Github Actions Status](https://flat.badgen.net/github/status/shepilov-vladislav/wdb_server_aiohttp?icon=github)
-[![codecov](https://flat.badgen.net/codecov/c/github/shepilov-vladislav/wdb_server_aiohttp?icon=codecov)](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp)
-![Dependabot](https://flat.badgen.net/github/dependabot/shepilov-vladislav/wdb_server_aiohttp?icon=dependabot)
-![License](https://flat.badgen.net/pypi/license/wdb.server.aiohttp)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/shepilov-vladislav/wdb_server_aiohttp/Pytest?logo=github&style=flat-square)
+![Codecov](https://img.shields.io/codecov/c/github/shepilov-vladislav/wdb_server_aiohttp?logo=codecov&style=flat-square)
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/shepilov-vladislav/wdb_server_aiohttp?logo=code%20climate&style=flat-square)
+![Dependabot](https://img.shields.io/badge/dependabot-Active-brightgreen?logo=dependabot&style=flat-square)
+![PyPI - License](https://img.shields.io/pypi/l/wdb.server.aiohttp?style=flat-square)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg?style=flat-square)](https://github.com/wemake-services/wemake-python-styleguide)
-<!-- ![Codeclimate](https://flat.badgen.net/codeclimate/maintainability/shepilov-vladislav/wdb_server_aiohttp?icon=codeclimate) -->
 
 ## GitHub
 
