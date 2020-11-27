@@ -1,8 +1,37 @@
 # wdb[aiohttp] - Web Debugger
-![Pylint Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Pylint/badge.svg?branch=master)
-![Flake8 Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Flake8/badge.svg?branch=master)
-![Pytest Status](https://github.com/shepilov-vladislav/wdb_server_aiohttp/workflows/Pytest/badge.svg?branch=master)
-[![codecov](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp/branch/master/graph/badge.svg)](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp)
+
+## Statistics
+
+![Github Actions Status](https://flat.badgen.net/github/status/shepilov-vladislav/wdb_server_aiohttp?icon=github)
+[![codecov](https://flat.badgen.net/codecov/c/github/shepilov-vladislav/wdb_server_aiohttp?icon=codecov)](https://codecov.io/gh/shepilov-vladislav/wdb_server_aiohttp)
+![Dependabot](https://flat.badgen.net/github/dependabot/shepilov-vladislav/wdb_server_aiohttp?icon=dependabot)
+![License](https://flat.badgen.net/pypi/license/wdb.server.aiohttp)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg?style=flat-square)](https://github.com/wemake-services/wemake-python-styleguide)
+<!-- ![Codeclimate](https://flat.badgen.net/codeclimate/maintainability/shepilov-vladislav/wdb_server_aiohttp?icon=codeclimate) -->
+
+## GitHub
+
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/shepilov-vladislav/wdb_server_aiohttp?label=latest%20stable&sort=semver&style=flat-square)](https://github.com/shepilov-vladislav/wdb_server_aiohttp/releases)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/shepilov-vladislav/wdb_server_aiohttp?label=latest%20unstable&style=flat-square)](https://github.com/shepilov-vladislav/wdb_server_aiohttp/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/shepilov-vladislav/wdb_server_aiohttp?style=flat-square)](https://github.com/shepilov-vladislav/wdb_server_aiohttp/commits/master)
+
+
+## Docker Hub
+
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/shepilovvladislav/wdb?style=flat-square)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/shepilovvladislav/wdb?style=flat-square)
+![Docker Pulls](https://img.shields.io/docker/pulls/shepilovvladislav/wdb?style=flat-square)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/shepilovvladislav/wdb?sort=date&style=flat-square)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/shepilovvladislav/wdb?sort=semver&style=flat-square)
+
+## PyPI
+
+[![Python Versions](https://img.shields.io/pypi/pyversions/wdb.server.aiohttp?logo=python&style=flat-square)](https://pypi.org/project/wdb.server.aiohttp)
+![PyPI - Format](https://img.shields.io/pypi/format/wdb.server.aiohttp?style=flat-square)
+![PyPI - Status](https://img.shields.io/pypi/status/wdb.server.aiohttp?style=flat-square)
+[![PyPI](https://img.shields.io/pypi/v/wdb.server.aiohttp?style=flat-square)](https://pypi.org/project/wdb.server.aiohttp)
+![PyPI - Downloads](https://img.shields.io/pypi/dd/wdb.server.aiohttp?style=flat-square)
+
 
 # About this project
 This is not original `wdb.server`, original `wdb.server` placed [here](https://github.com/Kozea/wdb/tree/master/server)

@@ -80,7 +80,9 @@ def main() -> None:
 
     services = (
         WDBService(
-            address=args.server_host, port=args.server_port, **vars(args)
+            address=args.server_host,
+            port=args.server_port,
+            **vars(args),
         ),
         WDBTCPService(address=args.socket_host, port=args.socket_port),
     )
