@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@types/codemirror": "^0.0.102",
-    "@types/jquery": "^3.5.4",
+    "@types/jquery": "^3.5.5",
     "@types/material-design-lite": "^1.1.16",
     "codemirror": "^5.58.3",
     "dialog-polyfill": "^0.5.3",
