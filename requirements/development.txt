@@ -1,6 +1,6 @@
 -r production.txt
 
-mock==4.0.2
+mock==4.0.3
 pytest==6.1.2
 pytest-aiohttp==0.3.0
 pytest-cov==2.10.1
