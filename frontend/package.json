@@ -33,7 +33,7 @@
     "webpack-cli": "^4.3.0"
   },
   "dependencies": {
-    "@types/codemirror": "^0.0.102",
+    "@types/codemirror": "^0.0.103",
     "@types/jquery": "^3.5.5",
     "@types/material-design-lite": "^1.1.16",
     "codemirror": "^5.59.0",
