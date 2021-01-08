@@ -853,10 +853,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@types/codemirror@^0.0.103":
-  version "0.0.103"
-  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.103.tgz#2ad656c4412c818beab4dd9214f3c8b48aa2a642"
-  integrity sha512-dYQTrIcZal0pnYz/ODjpJB+yadKJhGHywylAlHKjE8VSzGiw2A+6S+hD6jfyXw02ToFR9DO52X+O1pvHn31sbg==
+"@types/codemirror@^0.0.105":
+  version "0.0.105"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.105.tgz#34270aa3c31b3a347bfa1c978a60ea1ed5086ef3"
+  integrity sha512-FO3qdFLKK0yayyBJcctZndSVZzVC76uH/um8ELd0AQR3ucZBi/Ld+1lBQnCvXUytVFWVO0Yh0uWNnsmVJ+gNbw==
   dependencies:
     "@types/tern" "*"
 
