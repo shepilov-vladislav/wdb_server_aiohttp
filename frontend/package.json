@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/shepilov-vladislav/wdb_server_aiohttp",
   "devDependencies": {
-    "@babel/core": "^7.12.10",
+    "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.11",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
