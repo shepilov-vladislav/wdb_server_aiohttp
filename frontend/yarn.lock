@@ -941,10 +941,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
   integrity sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
 
-"@types/material-design-lite@^1.1.16":
-  version "1.1.16"
-  resolved "https://registry.yarnpkg.com/@types/material-design-lite/-/material-design-lite-1.1.16.tgz#a99d9589c09ee943b5fbc2284b70876e8c3c4b3e"
-  integrity sha512-559S2XW9YMwHznROJ4WFhZJOerJPuxLfqOX+LIKukyLo2NbVgpULwXUsrBlCwhZ4+ACHgVAE23CC3RS52lFxwA==
+"@types/material-design-lite@^1.1.17":
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/@types/material-design-lite/-/material-design-lite-1.1.17.tgz#fa0daeba01f41394389f2a662f217dd47968130f"
+  integrity sha512-XG+KIRF9uGOqRLJOJGO4CVLu0liAcar29/VBvtxhgBlccFUV/dmqInw9HC12ERp3m/oGQKZZlYAkEwYHRdNjjg==
 
 "@types/node@*":
   version "14.14.8"
