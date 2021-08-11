@@ -3,4 +3,4 @@ aiohttp_jinja2==1.4.2
 aiomisc==14.1.8
 aiomultiprocess==0.9.0
 psutil==5.8.0
-uvloop==0.15.3
+uvloop==0.16.0
