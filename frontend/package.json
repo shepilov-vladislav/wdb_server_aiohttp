@@ -20,7 +20,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.14.7",
     "copy-webpack-plugin": "^9.0.1",
-    "css-loader": "^6.2.0",
+    "css-loader": "^6.5.0",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.2.0",
     "postcss-loader": "^6.1.1",
