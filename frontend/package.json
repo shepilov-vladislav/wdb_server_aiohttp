@@ -22,7 +22,7 @@
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
-    "mini-css-extract-plugin": "^2.4.5",
+    "mini-css-extract-plugin": "^2.4.6",
     "postcss-loader": "^6.2.1",
     "prettier": "2.5.1",
     "sass-loader": "^12.4.0",
