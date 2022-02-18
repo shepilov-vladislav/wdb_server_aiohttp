@@ -1402,10 +1402,10 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
-codemirror@^5.65.0:
-  version "5.65.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.0.tgz#50344359393579f526ca53797e510ff75477117f"
-  integrity sha512-gWEnHKEcz1Hyz7fsQWpK7P0sPI2/kSkRX2tc7DFA6TmZuDN75x/1ejnH/Pn8adYKrLEA1V2ww6L00GudHZbSKw==
+codemirror@^5.65.1:
+  version "5.65.1"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.1.tgz#5988a812c974c467f964bcc1a00c944e373de502"
+  integrity sha512-s6aac+DD+4O2u1aBmdxhB7yz2XU7tG3snOyQ05Kxifahz7hoxnfxIRHxiCSEv3TUC38dIVH8G+lZH9UWSfGQxA==
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -2418,13 +2418,14 @@ sass-loader@^12.4.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@^1.44.0:
-  version "1.44.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.44.0.tgz#619aa0a2275c097f9af5e6b8fe8a95e3056430fb"
-  integrity sha512-0hLREbHFXGQqls/K8X+koeP+ogFRPF4ZqetVB19b7Cst9Er8cOR0rc6RU7MaI4W1JmUShd1BPgPoeqmmgMMYFw==
+sass@^1.49.8:
+  version "1.49.8"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.8.tgz#9bbbc5d43d14862db07f1c04b786c9da9b641828"
+  integrity sha512-NoGOjvDDOU9og9oAxhRnap71QaTjjlzrvLnKecUJ3GxhaQBrV6e7gPuSPF28u1OcVAArVojPAe4ZhOXwwC4tGw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
 
 schema-utils@^3.0.0, schema-utils@^3.1.0:
   version "3.1.0"
@@ -2504,6 +2505,11 @@ slash@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
+
+"source-map-js@>=0.6.2 <2.0.0":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
+  integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 source-map-js@^0.6.2:
   version "0.6.2"
