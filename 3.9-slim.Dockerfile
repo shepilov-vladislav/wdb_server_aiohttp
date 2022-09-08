@@ -1,4 +1,4 @@
-FROM python:3.10.2-slim
+FROM python:3.10.7-slim
 
 ARG WDB_SERVER_VERSION="1.1.0-dev1"
 ARG WDB_VERSION="3.3.0"
