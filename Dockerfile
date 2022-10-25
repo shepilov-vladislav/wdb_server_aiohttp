@@ -1,4 +1,4 @@
-FROM python:3.10.2-alpine
+FROM python:3.11.0-alpine
 
 ARG requirements=requirements/production.txt
 ARG WDB_SERVER_VERSION="1.1.0-dev1"
